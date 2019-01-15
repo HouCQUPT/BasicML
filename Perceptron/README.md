@@ -1,12 +1,13 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 # ***Perceptron*** 笔记
 ## 算法简介
-对于输入空间$\vec{X}\subseteq R^{n}$, 输出$\vec{Y}=\left \{ +1,-1 \right \}$, 用以下模型分类
-$$f(x)=sign(x\cdot w+b)$$
- 其中$w\subseteq R^{n}$为权重向量*weight vector*, $x$为输入空间的实例, $b \subseteq R$为偏置*bias*. 函数$sgin(x)$定义如下:
-$$sign(x)= \left\{\begin{matrix}
-+1 &{x\geqslant 0}  & \\ 
--1 &{x< 0} & 
-\end{matrix}\right.$$
+对于输入空间<img  title="\vec{X}=\subseteq R^n"/>, 输出<img src="https://latex.codecogs.com/gif.latex?\vec{Y}=\left&space;\{&space;&plus;1,-1&space;\right&space;\}" title="\vec{Y}=\left \{ +1,-1 \right \}" />, 用以下模型分类
+  
+  <img src="https://latex.codecogs.com/gif.latex?f(x)=sign(x\cdot&space;w&plus;b)" title="f(x)=sign(x\cdot w+b)" />   
+
+ 其中<img src="https://latex.codecogs.com/gif.latex?w\subseteq&space;R^{n}" title="w\subseteq R^{n}" />为权重向量*weight vector*,  *x* 为输入空间的实例, <img src="https://latex.codecogs.com/gif.latex?b&space;\subseteq&space;R" title="b \subseteq R" />为偏置*bias*. 函数 *sgin(x)* 定义如下:  
+<img src="https://latex.codecogs.com/gif.latex?sign(x)=&space;\left\{\begin{matrix}&space;&plus;1&space;&{x\geqslant&space;0}&space;&&space;\\&space;-1&space;&{x<&space;0}&space;&&space;\end{matrix}\right." title="sign(x)= \left\{\begin{matrix} +1 &{x\geqslant 0} & \\ -1 &{x< 0} & \end{matrix}\right." />
+
 可知感知机为线性分类器 *Linear Classcifier*.  
 当 $x \cdot w+b =0$ 可以视为分离$+1,-1$两类的超平面 *Separating Hyerplain*. 在二维输入空间中，*Separating Hyperplane*为一条直线，如下图所示![img](../img/perceptron_1.jpg).
 
@@ -25,4 +26,5 @@ $$w^*=w+\eta y_{i}x_{i}$$
 $$b^*=b+\eta y_{i}$$
 $\eta$ 为学习率 *(Learning Rate)*.
   
-2019-01-04 23:45
+2019-01-04 23:4  
+<pre xml:lang="latex">\vec{X}\subseteq R^n</pre>
