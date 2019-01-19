@@ -5,6 +5,8 @@ python3.6
 >pandas  
 >scikit-learn  
 
+
+---
 ## ***Binomial Logistic Regression 数学推导***
 有 *Binomial Logistic Regression Classifier*  
 ![img](https://latex.codecogs.com/gif.latex?P(Y=1|x)=\frac{exp(\vec{X}\cdot&space;\vec{W}&plus;b)}{1&plus;exp(\vec{X}\cdot&space;\vec{W}&plus;b)})  
@@ -31,9 +33,16 @@ python3.6
 利用梯度上升法可以更新 
 ![img](https://latex.codecogs.com/gif.latex?W^*=W&space;&plus;&space;\eta\:W)  多次迭代可以得到似然函数的最大值。
 
-## **程序实现**
+
+---
+## 程序实现
 1. 准备数据，30% 为测试数据集
 2. 梯度上升法训练数据，设置迭代次数和步长
 3. 验证测试数据集
 
 
+---
+## 实例应用
+### 鸢尾花数据集分类
+### 心脏病数据集分类
+数据处理部分参考[github](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3)
