@@ -1,2 +1,5 @@
 # BasicML
-Basic Machine Learning Algorithm
+机器学习算法的简单实现，持续更新
+
+
+2019-01-20  00:00
