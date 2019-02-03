@@ -3,12 +3,15 @@ import pandas as pd
 
 
 class DT:
-    def __init__(self, data_frame):
+    def __init__(self, data_frame, epsilon):
         """
         :param data_frame:  数据框架，包含类别，特征信息
         :type data_frame:   pandas df
+        :param epsilon:     阈值
+        :type epsilon:      float
         """
         self.df = data_frame
+        self.e = epsilon
 
     @staticmethod
     def __hd(data_frame):
@@ -100,14 +103,29 @@ class DT:
             if self.__gain(df, i) > __max_g:
                 __max_g = self.__gain(df, i)
                 __Ag = i
-        # step 4 pass
+        # step 4
+        if __max_g < self.e:
+            __dir = {}
+            # 初始化字典
+            for i in set(label):
+                __dir[i] = 0
+            for i in range(len(label)):
+                if __dir[label[i]] == 0:
+                    __dir[label[i]] = 1
+                else:
+                    __dir[label[i]] += 1
+            decision_info = "decision：" + str(label[0])
+            return decision_info
+
         # step 5
         new_df = df.drop([__Ag], axis=1)
         __dir = self.__split(df, __Ag)
+        __Ag = '属性:'+__Ag
         my = {__Ag: {}}
         for i in __dir:
             _new_df = new_df.iloc[__dir[i], :]
             _new_df = _new_df.reset_index(drop=True)
+            i = '值:' + i
             my[__Ag][i] = self.fit(_new_df)
         return my
 
@@ -130,7 +148,7 @@ credit_info = [['青年', '否', '否', '一般', '否'],
             ]
 credit_label = [u'年龄', u'有工作', u'有自己的房子', u'信贷情况', u'类别']
 df = pd.DataFrame(data=credit_info, columns=credit_label)
-clf = DT(df)
+clf = DT(df, 0.01)
 mytree = clf.fit(df)
 print(mytree)
 
